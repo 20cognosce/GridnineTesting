@@ -41,7 +41,7 @@ public class Main {
 
         System.out.println("\n#####################################################################################\n" +
                 "Имеются сегменты с датой прилёта раньше даты вылета\n");
-        Predicate<Flight> predicate2 = FlightFilterPredicateFactory.getPredicateForContainingASegmentWithDepartureIsBeforeArrival();
+        Predicate<Flight> predicate2 = FlightFilterPredicateFactory.getPredicateForContainingASegmentWithArrivalIsBeforeDeparture();
         flightFilter.filter(flights, Predicate.not(predicate2)).forEach(System.out::println);
 
         System.out.println("\n#####################################################################################\n" +

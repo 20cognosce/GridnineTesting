@@ -24,9 +24,9 @@ public class FlightFilterPredicateFactory {
     }
 
     //TODO: the case when arrival equals to departure is not handled in this predicate (but should be)
-    public static Predicate<Flight> getPredicateForContainingASegmentWithDepartureIsBeforeArrival() {
+    public static Predicate<Flight> getPredicateForContainingASegmentWithArrivalIsBeforeDeparture() {
         return flight -> flight.getSegments().stream()
-                .anyMatch(s -> !s.getDepartureDate().isBefore(s.getArrivalDate()));
+                .anyMatch(s -> s.getArrivalDate().isBefore(s.getDepartureDate()));
     }
 
     public static Predicate<Flight> getPredicateForTotalTimeOnLandMoreThan(Duration maximumTimeOnLand) {

@@ -28,7 +28,7 @@ public class FlightFilterTest {
 
     @Test
     public void filter_PredicateForContainingASegmentWithDepartureIsBeforeArrival_4thFlightReturned() {
-        Predicate<Flight> predicate = FlightFilterPredicateFactory.getPredicateForContainingASegmentWithDepartureIsBeforeArrival();
+        Predicate<Flight> predicate = FlightFilterPredicateFactory.getPredicateForContainingASegmentWithArrivalIsBeforeDeparture();
         List<Flight> result = flightFilter.filter(flights, predicate);
 
         Assert.assertEquals(result.get(0), flights.get(3));
